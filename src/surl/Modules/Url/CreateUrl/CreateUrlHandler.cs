@@ -35,6 +35,7 @@ public class CreateUrlHandler : ICreateUrlHandler
         var url = new Url
         {
             // UrlBody = command.Url
+            Key = "sdfds",
             UrlBody = $"http://{command.Url}"
         };
 
