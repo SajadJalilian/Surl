@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using surl.Shared.Persistence;
-
 namespace surl.Modules.Url.CreateUrl;
 
 public interface ICreateUrlHandler
@@ -10,13 +7,12 @@ public interface ICreateUrlHandler
 
 public class CreateUrlHandler : ICreateUrlHandler
 {
-    private readonly AppDbContext _context;
-    private readonly DbSet<Url> _urls;
+    private readonly UrlRepository _urlRepository;
+    private static Random random = new Random();
 
-    public CreateUrlHandler(AppDbContext context)
+    public CreateUrlHandler(UrlRepository urlRepository)
     {
-        _context = context;
-        _urls = context.Set<Url>();
+        _urlRepository = urlRepository;
     }
 
     public async Task<Url> CreateUrl(CreateUrlCommand command)
@@ -34,14 +30,19 @@ public class CreateUrlHandler : ICreateUrlHandler
 
         var url = new Url
         {
-            // UrlBody = command.Url
-            Key = "sdfds",
-            UrlBody = $"http://{command.Url}"
+            Key = RandomString(10),
+            UrlBody = command.Url
         };
 
-        // _urls.Add(url);
-        // await _context.SaveChangesAsync();
+        await _urlRepository.Create(url);
 
         return url;
+    }
+
+    private static string RandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Repeat(chars, length)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
     }
 }

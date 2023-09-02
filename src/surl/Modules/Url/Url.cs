@@ -1,8 +1,14 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace surl.Modules.Url;
 
 public class Url
 {
-    public int Id { get; set; }
-    public required string Key { get; set; }
-    public required string UrlBody { get; set; }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
+
+    [BsonElement] public required string Key { get; set; }
+    [BsonElement] public required string UrlBody { get; set; }
 }

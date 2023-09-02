@@ -1,14 +1,15 @@
 using surl.Modules.Url;
-using surl.Shared.Api.Extensions.DependencyInjections;
-using surl.Shared.Api.Extensions.Middlewares;
+using surl.Shared.Api.Models.Configurations;
 
 #region Add services to the container.
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddConfiguredDatabase(builder.Configuration);
+builder.Services.Configure<MongoDbConfigurations>(builder
+    .Configuration.GetSection(MongoDbConfigurations.Key));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHealthChecks();
 builder.Services.AddUrlServices();
 
 #endregion
@@ -17,7 +18,9 @@ builder.Services.AddUrlServices();
 
 var app = builder.Build();
 
-app.UseRouting();
+app.MapHealthChecks("/health");
+// app.UseHttpsRedirection();
+// app.UseAuthorization();
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 if (environment is "Local" or "Development" or "NewFeature" or "Staging")
@@ -26,9 +29,6 @@ if (environment is "Local" or "Development" or "NewFeature" or "Staging")
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1"));
 }
 
-// app.UseHttpsRedirection();
-// app.UseAuthorization();
-// app.UseConfiguredMigration();
 app.RegisterUrlApis();
 
 app.Run();
