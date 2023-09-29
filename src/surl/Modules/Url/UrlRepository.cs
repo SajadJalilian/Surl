@@ -21,9 +21,9 @@ public class UrlRepository
             mongoDbConfigs.Value.ConnectionName);
     }
 
-    public async Task Create(Url url) => await _uriCollection.InsertOneAsync(url);
-    public async Task<Url> Get(string id) => await _uriCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-    public async Task<IEnumerable<Url>> Get() => await _uriCollection.Find(new BsonDocument()).ToListAsync();
-    public async Task Put(Url url) => await _uriCollection.ReplaceOneAsync(x => x.Id == url.Id, url);
-    public async Task Remove(string id) => await _uriCollection.DeleteOneAsync(x => x.Id == id);
+    public Task CreateAsync(Url url) => _uriCollection.InsertOneAsync(url);
+    public Task<Url> GetAsync(string id) => _uriCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    public async Task<IEnumerable<Url>> GetAsync() => await _uriCollection.Find(new BsonDocument()).ToListAsync();
+    public Task PutAsync(Url url) => _uriCollection.ReplaceOneAsync(x => x.Id == url.Id, url);
+    public Task RemoveAsync(string id) => _uriCollection.DeleteOneAsync(x => x.Id == id);
 }

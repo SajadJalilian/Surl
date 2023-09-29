@@ -8,6 +8,6 @@ public class CreateUrlValidator : AbstractValidator<CreateUrlCommand>
     {
         RuleFor(x => x.Url)
             .Length(2, 1500)
-            .WithMessage("Url length must be between 2 and 1500");
+            .WithState(_ => CreateUrlError.BasketItemsMaxQuantityExceeded);
     }
 }

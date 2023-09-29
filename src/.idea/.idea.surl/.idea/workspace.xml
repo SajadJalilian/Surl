@@ -14,31 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c328a42-9e34-4e3e-b708-1e4b591723bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/surl/Modules/Url/UrlRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/surl/Shared/Api/Models/Configurations/MongoDbConfigurations.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/surl/Shared/Api/Models/Configurations/notempty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/surl/Shared/Persistence/Migrations/notempty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/surl/Shared/Persistence/Repositories/notempty" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlError.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/surl/Shared/Communal/ValidationResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/surl/Shared/Communal/ValidationResultExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/surl/Shared/Communal/WebApplicationExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.surl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.surl/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/Url.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/Url.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/UrlEntityConfigurations.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/UrlServiceInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/UrlServiceInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Api/Extensions/DependencyInjections/AppSettingsBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Api/Extensions/DependencyInjections/DatabaseInjection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Api/Extensions/Middlewares/MigrationMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/AppDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/ApplicationContextDesignFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/Migrations/20230901185957_Init.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/Migrations/20230901185957_Init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/Repositories/IRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/Persistence/Repositories/Repository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/ServiceBus/Consumers/notempty" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Shared/Api/Extensions/DependencyInjections/notempty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/Shared/ServiceBus/Models/notempty" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Shared/Api/Extensions/Middlewares/notempty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/appsettings.Local.json" beforeDir="false" afterPath="$PROJECT_DIR$/surl/appsettings.Local.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surl/surl.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/surl/surl.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/UrlApiRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/UrlApiRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surl/Modules/Url/UrlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/surl/Modules/Url/UrlRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +34,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26adcbe265144d86a0706b969175ef3d3c800/79/96fbfd17/Uri.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/81e5faf2005b4a32b36825bdbda90d3eae3a00/a6/cd5a4be1/RuntimeHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dad7066d59e42d92476c5ad1180c2b63352d32689dd3d3be2bb2aa26b3bea5/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3520bf5c151bbc5aed94ba6abea697eaaee2b96fe96341613fef02be1cc54/ValidationFailure.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7df7da5b32d9ba52a4065e8e7546f391a2ae3d8cd3753c3cc254f332faf6d/DeleteResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a4af3fabc41ff23138d52fdccc851da7f4f67136fe81cdb2c1d4a448e785147/IMongoCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/sajad/projects/dotnet/surl/src/surl/Shared/Api/Extensions/DependencyInjections/DatabaseInjection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b56e81b4f848619ed2183b958fd8f9b4ec3168f2122af2b8da4d6d54fd333152/EndpointRouteBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/surl/Shared/Communal/WebApplicationExtension.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -74,7 +62,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sajad/projects/dotnet/surl/src/surl.sln&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sajad/projects/dotnet/apotheekcoach&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -166,5 +154,50 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlHandler.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/surl/Modules/Url/CreateUrl/CreateUrlHandler.cs" initialLine="21" containingFunctionPresentation="Method 'CreateUrl'">
+            <startOffsets>
+              <option value="550" />
+            </startOffsets>
+            <endOffsets>
+              <option value="551" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/surl/Modules/Url/UrlApiRegistration.cs</url>
+          <line>14</line>
+          <properties documentPath="$PROJECT_DIR$/surl/Modules/Url/UrlApiRegistration.cs" initialLine="14" containingFunctionPresentation="Lambda expression inside Method 'RegisterUrlApis'">
+            <startOffsets>
+              <option value="410" />
+            </startOffsets>
+            <endOffsets>
+              <option value="491" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/surl/Shared/Communal/WebApplicationExtension.cs</url>
+          <line>5</line>
+          <properties documentPath="$PROJECT_DIR$/surl/Shared/Communal/WebApplicationExtension.cs" initialLine="5" containingFunctionPresentation="Method 'ReturnResponse'">
+            <startOffsets>
+              <option value="176" />
+            </startOffsets>
+            <endOffsets>
+              <option value="177" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

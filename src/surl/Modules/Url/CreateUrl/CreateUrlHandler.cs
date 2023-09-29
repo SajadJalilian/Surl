@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity;
+using surl.Shared.Communal;
+
 namespace surl.Modules.Url.CreateUrl;
 
 public interface ICreateUrlHandler
 {
-    Task<Url> CreateUrl(CreateUrlCommand command);
+    Task<OperationResult> CreateUrl(CreateUrlCommand command);
 }
 
 public class CreateUrlHandler : ICreateUrlHandler
@@ -15,18 +18,11 @@ public class CreateUrlHandler : ICreateUrlHandler
         _urlRepository = urlRepository;
     }
 
-    public async Task<Url> CreateUrl(CreateUrlCommand command)
+    public async Task<OperationResult> CreateUrl(CreateUrlCommand command)
     {
-        // Validation
-        var validator = new CreateUrlValidator();
-        var validationResult = await validator.ValidateAsync(command);
-
-        if (!validationResult.IsValid)
-        {
-            foreach (var error in validationResult.Errors)
-            {
-            }
-        }
+        var validations = await Validations(command);
+        if (!validations.IsValid)
+            return new OperationResult(OperationResultStatus.InvalidRequest, value: validations.ErrorMessage);
 
         var url = new Url
         {
@@ -34,9 +30,19 @@ public class CreateUrlHandler : ICreateUrlHandler
             UrlBody = command.Url
         };
 
-        await _urlRepository.Create(url);
+        await _urlRepository.CreateAsync(url);
 
-        return url;
+        return new OperationResult(OperationResultStatus.Created, value: url);
+    }
+
+    private static async Task<ValidationResult> Validations(CreateUrlCommand command)
+    {
+        var validator = new CreateUrlValidator();
+        var validation = await validator.ValidateAsync(command);
+
+        return !validation.IsValid
+            ? new ValidationResult(IsValid: false, ErrorMessage: validation.GetFirstCustomState())
+            : new ValidationResult(IsValid: true, null);
     }
 
     private static string RandomString(int length)
