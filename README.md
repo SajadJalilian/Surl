@@ -1,2 +1,2 @@
-# surl
-A simple URL shorten-er in .NET
+# Surl
+A simple URL shortener in .NET
