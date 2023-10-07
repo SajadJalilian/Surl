@@ -1,36 +1,35 @@
 using Surl.Shared.Communal;
 
-namespace Surl.Modules.Url.CreateUrl;
+namespace Surl.Modules.Url.GetUrl;
 
-public interface ICreateUrlHandler
+public interface IGetUrlHandler
 {
-    Task<OperationResult> CreateUrl(CreateUrlCommand command);
+    Task<OperationResult> GetUrl(GetUrlCommand command);
 }
 
-public class CreateUrlHandler : ICreateUrlHandler
+public class GetUrlHandler : IGetUrlHandler
 {
     private readonly UrlRepository _urlRepository;
 
-    public CreateUrlHandler(UrlRepository urlRepository)
+    public GetUrlHandler(UrlRepository urlRepository)
     {
         _urlRepository = urlRepository;
     }
 
-    public async Task<OperationResult> CreateUrl(CreateUrlCommand command)
+    public async Task<OperationResult> GetUrl(GetUrlCommand command)
     {
         var validations = await Validations(command);
         if (!validations.IsValid)
             return new OperationResult(OperationResultStatus.InvalidRequest, value: validations.ErrorMessage);
 
-        var url = new Url(command.Url);
-        await _urlRepository.CreateAsync(url);
+        var url = await _urlRepository.GetAsync(command.Key);
 
-        return new OperationResult(OperationResultStatus.Created, value: url);
+        return new OperationResult(OperationResultStatus.Ok, value: url.GetUrlResult());
     }
 
-    private static async Task<ValidationResult> Validations(CreateUrlCommand command)
+    private static async Task<ValidationResult> Validations(GetUrlCommand command)
     {
-        var validator = new CreateUrlValidator();
+        var validator = new GetUrlValidator();
         var validation = await validator.ValidateAsync(command);
 
         return !validation.IsValid

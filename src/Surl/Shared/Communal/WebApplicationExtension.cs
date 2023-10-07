@@ -29,7 +29,7 @@ public static class WebApplicationExtension
         return operation.Status switch
         {
             OperationResultStatus.Ok => Results.Ok(response),
-            OperationResultStatus.Created => Results.Created(string.Empty, response),
+            OperationResultStatus.Created => Results.Created("-", response), // URI can not be null. I will get fixed in .NET 8
             OperationResultStatus.InvalidRequest => Results.BadRequest(response),
             OperationResultStatus.NotFound => Results.NotFound(response),
             OperationResultStatus.Unauthorized => Results.UnprocessableEntity(response),

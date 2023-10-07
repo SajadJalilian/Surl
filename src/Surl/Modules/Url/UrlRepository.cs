@@ -22,7 +22,7 @@ public class UrlRepository
     }
 
     public Task CreateAsync(Url url) => _uriCollection.InsertOneAsync(url);
-    public Task<Url> GetAsync(string id) => _uriCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    public Task<Url> GetAsync(string key) => _uriCollection.Find(x => x.Key == key).FirstOrDefaultAsync();
     public async Task<IEnumerable<Url>> GetAsync() => await _uriCollection.Find(new BsonDocument()).ToListAsync();
     public Task PutAsync(Url url) => _uriCollection.ReplaceOneAsync(x => x.Id == url.Id, url);
     public Task RemoveAsync(string id) => _uriCollection.DeleteOneAsync(x => x.Id == id);
