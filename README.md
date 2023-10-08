@@ -1,2 +1,2 @@
 # Surl
-A simple URL shortener in .NET
+To the point URL shortener in .NET / C#
