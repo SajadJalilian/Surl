@@ -6,7 +6,7 @@ public class CreateUrlError
 {
     public static ErrorModel BasketItemsMaxQuantityExceeded = new(
         code: 1,
-        title: "OtcProduct Error",
+        title: "Surl Error",
         (
             Language: Language.English,
             Message: "Url length must be between 2 and 1500"

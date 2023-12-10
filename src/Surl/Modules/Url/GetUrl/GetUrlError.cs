@@ -6,7 +6,7 @@ public class GetUrlError
 {
     public static ErrorModel KeyLengthIdInvalid = new(
         code: 1,
-        title: "OtcProduct Error",
+        title: "Surl Error",
         (
             Language: Language.English,
             Message: "Key length is invalid"
